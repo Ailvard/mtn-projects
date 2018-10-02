@@ -52,15 +52,15 @@
     </repository>
   </repositories>
   <distributionManagement>
-  <repository>
-    <id>releases</id>
-    <name>releases</name>
-    <url>http://10.19.12.53:8081/nexus/content/repositories/releases/</url>
-  </repository>
-  <snapshotRepository>
-    <id>snapshots</id>
-    <name>snapshots</name>
-    <url>http://10.19.12.53:8081/nexus/content/repositories/snapshots/</url>
-  </snapshotRepository>
-</distributionManagement>
+    <repository>
+      <id>releases</id>
+      <name>releases</name>
+      <url>http://10.19.12.53:8081/nexus/content/repositories/releases/</url>
+    </repository>
+    <snapshotRepository>
+      <id>snapshots</id>
+      <name>snapshots</name>
+      <url>http://10.19.12.53:8081/nexus/content/repositories/snapshots/</url>
+    </snapshotRepository>
+  </distributionManagement>
 </project>
