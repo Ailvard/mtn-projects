@@ -53,12 +53,12 @@
   </repositories>
   <distributionManagement>
     <repository>
-      <id>releases</id>
+      <id>maven-releases</id>
       <name>releases</name>
       <url>http://10.19.12.53:8081/repository/maven-releases/</url>
     </repository>
     <snapshotRepository>
-      <id>snapshots</id>
+      <id>maven-snapshots</id>
       <name>snapshots</name>
       <url>http://10.19.12.53:8081/repository/maven-snapshots/</url>
     </snapshotRepository>
