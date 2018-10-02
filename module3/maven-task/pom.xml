@@ -47,8 +47,8 @@
     <name>maven-simple</name>
   <repositories>
     <repository>
-      <id>maven-group</id>
-      <url>http://10.19.12.53:8081/repository/maven-group/</url>
+      <id>maven-releases</id>
+      <url>http://10.19.12.53:8081/repository/maven-releases/</url>
     </repository>
   </repositories>
   <distributionManagement>
