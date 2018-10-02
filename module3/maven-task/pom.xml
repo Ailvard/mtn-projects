@@ -48,13 +48,13 @@
          <repositories>
     <repository>
       <id>maven-group</id>
-      <url>http://your-host:8081/repository/maven-group/</url>
+      <url>http://10.19.12.53:8081/repository/maven-group/</url>
     </repository>
   </repositories>
          <distributionManagement>
     <snapshotRepository>
       <id>nexus-snapshots</id>
-      <url>http://http://10.19.12.53:8081/repository/maven-snapshots/</url>
+      <url>http://10.19.12.53:8081/repository/maven-snapshots/</url>
     </snapshotRepository>
     <repository>
       <id>nexus-releases</id>
