@@ -6,7 +6,7 @@
 
   <groupId>com.mtn.training</groupId>
   <artifactId>ci-training</artifactId>
-  <version>1.0-snapshot</version>
+  <version>1.0</version>
   <name>maven-task</name>
 
   <!-- FIXME change it to the project's website -->
@@ -45,6 +45,20 @@
           <artifactId>maven-resources-plugin</artifactId>
           <version>3.0.2</version>
         </plugin>
+	<plugin>
+            <artifactId>maven-dependency-plugin</artifactId>
+            <executions>
+              <execution>
+                <phase>install</phase>
+                <goals>
+                  <goal>copy-dependencies</goal>
+                </goals>
+                <configuration>
+                  <outputDirectory>${project.build.directory}/lib</outputDirectory>
+                </configuration>
+              </execution>
+            </executions>
+        </plugin>
         <plugin>
           <artifactId>maven-compiler-plugin</artifactId>
           <version>3.8.0</version>
@@ -54,8 +68,18 @@
           <version>2.22.1</version>
         </plugin>
         <plugin>
+	  <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-jar-plugin</artifactId>
           <version>3.0.2</version>
+	  <configuration>
+		<archive>
+			<manifest>
+				<addClasspath>true</addClasspath>
+				<classpathPrefix>lib/</classpathPrefix>
+				<mainClass>com.test.Project</mainClass>
+			</manifest>
+		</archive>
+	  </configuration>
         </plugin>
         <plugin>
           <artifactId>maven-install-plugin</artifactId>
