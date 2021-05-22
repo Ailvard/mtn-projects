@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<project name="AntLab" default="package" basedir=".">
+  <property name="src" location="src"/>
+  <property name="lib" location="lib"/>
+  <property name="build" location="build"/>
+  <property name="dist" location="dist"/>
+
+  <target name="clean">
+    <!-- Delete the ${build} and ${dist} directory trees -->
+    <delete dir="${build}"/>
+    <delete dir="${dist}"/>
+  </target>
+
+  <target name="compile" depends="clean">
+    <!-- Compile the Java code from ${src} into ${build} -->
+    <mkdir dir="${build}"/>
+    <javac srcdir="${src}" destdir="${build}" includeantruntime="false">
+    	<classpath>
+       		<fileset dir="${lib}">
+          		<include name="*.jar"/>
+       		</fileset>
+        </classpath>
+    </javac>
+  </target>
+
+  <target name="package" depends="compile">
+    <!-- Put everything in ${build} into the ${ant.project.name}.jar file -->
+    <jar destfile="${build}/${ant.project.name}.jar" basedir="${build}">
+    	<manifest>
+    		<attribute name="Main-Class" value="com.test.Project"/>
+    	</manifest>
+    </jar>
+  </target>
+
+  <target name="UnitTest">
+	
+  </target>
+
+  <target name="dist" depends="package">
+  <!-- Distribution artifact -->
+    <mkdir dir="${dist}"/>
+    <zip destfile="${dist}/${ant.project.name}.zip">
+	<fileset dir="${build}" includes="${ant.project.name}.jar"/>
+	<fileset dir="." includes="config/*.properties"/>
+	<fileset dir="." includes="lib/*.jar"/>
+    </zip>
+ </target> 
+
+</project>
